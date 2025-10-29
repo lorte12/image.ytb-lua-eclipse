@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Stylé</title>
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes progressBar {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            font-family: Arial, sans-serif;
+        }
+
+        .notification {
+            position: absolute;
+            top: 890px;
+            left: 1679px;
+            width: 241px;
+            height: 90px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s ease-out 5.5s forwards;
+        }
+
+        .notification-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .notification-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notification-title {
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        .notification-message {
+            font-size: 11px;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--led-color, #00aaff);
+            box-shadow: 0 0 10px var(--led-color, #00aaff), 0 0 5px var(--led-color, #00aaff);
+            animation: progressBar 5s linear forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification">
+        <img src="https://raw.githubusercontent.com/lorte12/image.ytb-lua-eclipse/main/Online.png" alt="icon" class="notification-icon">
+        <div class="notification-text">
+            <div class="notification-title">Online</div>
+            <div class="notification-message">NPC spawn around the approved player</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+</body>
+</html>
